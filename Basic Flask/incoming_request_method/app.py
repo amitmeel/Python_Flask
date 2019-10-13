@@ -21,20 +21,28 @@ def query():
 def json():
     return jsonify({'key':'value', 'key2':[123,4345]})
 
-@app.route('/theform')
+@app.route('/theform', methods=['GET','POST'])
 def theform():
-    return '''<form method="POST" action="/process">
+    if request.method=='GET':
+        return '''<form method="POST" action="/theform">
               <input type="text" name="name">
               <input type="text" name="location">
               <input type="submit">
               </form>'''
+    else:
+        name = request.form['name']
+        location = request.form['location']
 
+        return '''Hello {}, you are from {}. you have submitted the form successfully'''.format(name,location)
+
+"""
 @app.route('/process', methods=['POST'])
 def process():
     name = request.form['name']
     location = request.form['location']
 
     return '''Hello {}, you are from {}. you have submitted the form successfully'''.format(name,location)
+"""
 
 @app.route('/processjson', methods=['POST'])
 def processjson():
