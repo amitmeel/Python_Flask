@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{%block tite%}The Form {%endblock%}
+
+{%block content%}
+<!-- If you want to see the content of base file 'block content' use super() else it will be overridden by below content. -->
+{{ super()}}
+    <body>
+        <h1>Please fill the below form</h1>
+        <form method="POST" action="/theform">
+            <input type="text" name="name">
+            <input type="text" name="location">
+            <input type="submit">
+            </form>
+{%endblock%}

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+    <body>
+        <h1> Base Template</h1> 
+        {% block content %}
+         <!--if you don't use super() in child file then it will not be shown in other child files.-->
+        <h2>This is in the Base Template</h2>
+        {% endblock %}       
+    </body>
+</html>

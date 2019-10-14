@@ -1,0 +1,27 @@
+<!-- ## This is the child template that will fill the blocks of base.   -->
+{% extends "base.html" %}
+
+{%block title%}Home{%endblock%}
+
+{% block content %}
+<h1>Hello {{name}}, You are on the home page</h1>
+
+{% if display %}
+<h2>This is displayed!</h2>
+{% else %}
+<h2>This is not displayed!</h2>
+{% endif %}
+
+{% for x in mylist %}
+<h3> {{ x }} </h3>
+{% endfor %}
+
+
+{% for dict in listofdictionaries %}
+<h4> {{ dict.name }} </h4>
+{% endfor %}
+
+
+<!-- #This is the static file -->
+<img src=" {{ url_for('static', filename='images/01.png')}}">
+{% endblock %}
