@@ -2,3 +2,4 @@
 /Basic Flask/.vscode
 /Templates/Intro_to_templates/__pycache__
 sqlitedb.db
+/Food Tracker App/food_tracker.db
